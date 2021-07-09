@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 6px solid #060606;
+    border-radius: 10px;
+    height: 450px;
+    width: 450px;
+    opacity: 0;
+    animation: drop 0.75s 1s ease-out forwards;
+}
+
+img {
+    position: absolute;
+    top: -219px;
+    width: 300px;
+}
+
+input {
+    width: 80%;
+    padding: 0.5em;
+    margin: 0.5em;
+    font-size: 1.5rem;
+    outline: none;
+    border: none;
+    color: #060606;
+    border-bottom: 2px solid #060606;
+}
+
+input:focus {
+    border-color: rgb(31 173 67);
+}
+
+button {
+    width: 80%;
+    padding: 0.5em;
+    margin: 0.5em;
+    font-size: 1.5rem;
+    background: #323232;
+    color: #fff;
+    border: 3px solid #323232;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    color: #323232;
+    background-color: #b6b6b6;
+}
+
+@keyframes drop {
+    0% {
+        opacity: 0;
+        transform: translateY(-1500px);
+    }
+
+    33% {
+        opacity: 0.5;
+        transform: translateY(0px);
+    }
+
+    66% {
+        opacity: 0.75;
+        transform: translateY(150px);
+    }
+
+    100% {
+        transform: translateY(100px);
+        opacity: 1;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .form {
+        transform: scale(0.6);
+    }
+}
